@@ -10,12 +10,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <meta content="SPLIT" property="og:title" />
+    <meta content="A tool to split players into 2 to 10 teams" property="og:description" />
+    <meta content="https://stefanmarantonsson.github.io/SplitPlayersIntoTeams/" property="og:url" />
+    <meta content="https://github.com/StefanMarAntonsson/SplitPlayersIntoTeams/raw/master/split-app.png" property="og:image" />
+    <meta content="#212331" data-react-helmet="true" name="theme-color" />
 </head>
 <body>
     <div class="container">
         <div class="container"><h1>SPLIT</h1></div>
-        <div class="container"><h3>Write each players name in a new line.</h3></div>
-        <textarea class="item" id="playernames" cols="40" rows="14"></textarea>
+        <textarea class="item" id="playernames" cols="40" rows="14" placeholder="Write each players name in a new line."></textarea>
         <div class="controls">
             <label id="rangeLabel" for="numberofteams">Nunber of teams: 2</label>
             <input type="range" id="numberofteams" min="2" value="2" max="10" onchange="UpdateLabel()">

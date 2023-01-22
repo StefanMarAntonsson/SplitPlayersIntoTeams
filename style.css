@@ -6,7 +6,6 @@
     --hover-color: hsl(233, 18%, 40%);
     --active-color: hsl(233, 24%, 36%);
 }
-
 body {
     color: var(--primary-color);
     background-color: var(--background-color);
@@ -22,12 +21,16 @@ textarea, input {
     color: var(--primary-color);
     background-color: var(--secondary-color);
 }
-h1, h3 {
+h1, h3, ul, input, textarea, label {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 100;
 }
 li {
     list-style: none;
+    margin-top: 0.5rem;
+}
+ul>label {
+    font-weight: 800;
 }
 .container {
     display: grid;
@@ -40,12 +43,12 @@ li {
     align-items: center;
     margin: 0.5rem;
 }
-#numberofteams {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-}
 .teamscontainer {
     border-top: 4px dashed var(--secondary-color);
     display: flex;
     justify-content: space-evenly;
+}
+#numberofteams {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }

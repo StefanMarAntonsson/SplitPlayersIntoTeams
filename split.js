@@ -1,6 +1,5 @@
 function Split()
 {
-    console.clear();
     // Clear the teams
     document.getElementById("teams").innerHTML = "";
 
