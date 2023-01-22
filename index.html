@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Split Players Into Teams</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+</head>
+<body>
+    <div class="container">
+        <div class="container"><h1>SPLIT</h1></div>
+        <div class="container"><h3>Write each players name in a new line.</h3></div>
+        <textarea class="item" id="playernames" cols="40" rows="14"></textarea>
+        <div class="controls">
+            <label id="rangeLabel" for="numberofteams">Nunber of teams: 2</label>
+            <input type="range" id="numberofteams" min="2" value="2" max="10" onchange="UpdateLabel()">
+            <input type="button" value="SPLIT INTO TEAMS" onclick="Split()">
+        </div>
+        <div class="teamscontainer" id="teams"></div>
+    </div>
+    <script src="split.js"></script>
+</body>
+</html>

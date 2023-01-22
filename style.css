@@ -1,0 +1,51 @@
+:root {
+    --primary-color: hsl(0, 0%, 90%);
+    --secondary-color: hsl(233, 19%, 28%);
+    --background-color: hsl(232, 19%, 16%);
+
+    --hover-color: hsl(233, 18%, 40%);
+    --active-color: hsl(233, 24%, 36%);
+}
+
+body {
+    color: var(--primary-color);
+    background-color: var(--background-color);
+}
+input:hover {
+    background-color: var(--hover-color);
+}
+input:active {
+    background-color: var(--active-color);
+}
+textarea, input {
+    border: none;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+h1, h3 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+}
+li {
+    list-style: none;
+}
+.container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+.controls {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+}
+#numberofteams {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.teamscontainer {
+    border-top: 4px dashed var(--secondary-color);
+    display: flex;
+    justify-content: space-evenly;
+}
