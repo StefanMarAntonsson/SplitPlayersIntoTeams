@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Aldrich
+- Font Author: Copyright (c) Matthew Desmond, 2011. All rights reserved.
+- Font Source: http://fonts.gstatic.com/s/aldrich/v17/MCoTzAn-1s3IGyJMZaAS3pP5H_E.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
