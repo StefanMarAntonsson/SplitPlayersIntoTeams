@@ -1,55 +1,45 @@
 function Split()
 {
-    // Clear the teams
     document.getElementById("teams").innerHTML = "";
-
-    // create an array of player names from textarea contents
     var listOfPlayerNames = document.getElementById("playernames").value.split('\n');
-    //var listOfPlayerNames = ["Player 1", "Player 2", "Player 3", "Player 4", "Player 5", "Player 6", "Player 7"];
-    var numberOfTeams = document.getElementById('numberofteams').value;
+    if(listOfPlayerNames.length == 1) {
+        return;
+    }
+    const numberOfTeams = document.getElementById('numberofteams').value;
     listOfPlayerNames = Shuffle(listOfPlayerNames);
-
-    var totalPlayerCount = listOfPlayerNames.length;
-    var playersPerTeam = Math.floor(totalPlayerCount / numberOfTeams);
-
-    var currentTeamUl = 1;
-    for (let t = 0; t < numberOfTeams; t++) {
+    const playerCount = listOfPlayerNames.length;
+    const playersPerTeam = Math.floor(playerCount / numberOfTeams);
+    for (let teamNumber = 1; teamNumber <= numberOfTeams; teamNumber++) {
         const unorderedTeamList = document.createElement("ul");
         const teamLabel = document.createElement("label");
-        unorderedTeamList.setAttribute("id", `team${currentTeamUl}`);
-        teamLabel.innerHTML = `Team: ${currentTeamUl}`;
+        unorderedTeamList.setAttribute("id", `team${teamNumber}`);
+        teamLabel.innerHTML = `Team: ${teamNumber}`;
         unorderedTeamList.appendChild(teamLabel);
-
         document.getElementById("teams").appendChild(unorderedTeamList);
-        currentTeamUl++;
     }
-    var remPlUlGened = false;
-    var currentTeamNr = 1;
-    for (let k = 0; k < totalPlayerCount; k++) {
-        const teamNumber = Math.ceil(currentTeamNr / playersPerTeam)
-        
+    var teamForRemainingPlayer = false;
+    for (let k = 0; k < playerCount; k++) {
+        const teamNumber = Math.ceil((k+1) / playersPerTeam);
         const player = document.createElement("li");
         player.innerHTML = listOfPlayerNames[k];
-
         const teamElement = document.getElementById(`team${teamNumber}`);
         if(typeof(teamElement) != 'undefined' && teamElement != null){
             document.getElementById(`team${teamNumber}`).appendChild(player);
         } else{
-            if(remPlUlGened == false) {
+            if(teamForRemainingPlayer == false) {
                 const unorderedTeamList = document.createElement("ul");
                 const teamLabel = document.createElement("label");
                 unorderedTeamList.setAttribute("id", "remainingplayers");
                 teamLabel.innerHTML = "Remaining players";
                 unorderedTeamList.appendChild(teamLabel);
                 document.getElementById("teams").appendChild(unorderedTeamList);
-                remPlUlGened = true;
+                teamForRemainingPlayer = true;
             }
             document.getElementById("remainingplayers").appendChild(player);
         }
-        currentTeamNr++;
     }
 }
-
+// shuffle -.- . -.-
 function Shuffle(a) {
     var randNum, x, i;
     for (i = a.length - 1; i > 0; i--) {
@@ -62,5 +52,6 @@ function Shuffle(a) {
 }
 
 function UpdateLabel() {
-    document.getElementById("rangeLabel").innerHTML = "Number of teams: " + document.getElementById("numberofteams").value;
+    const numberOfTeams = document.getElementById("numberofteams").value;
+    document.getElementById("rangeLabel").innerHTML = `Number of teams: ${numberOfTeams}`;
 }

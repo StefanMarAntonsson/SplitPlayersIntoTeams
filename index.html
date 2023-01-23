@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
-
+    <meta content="website" property="og:type"/>
     <meta content="SPLIT" property="og:title" />
     <meta content="A tool to split players into 2 to 10 teams" property="og:description" />
     <meta content="https://stefanmarantonsson.github.io/SplitPlayersIntoTeams/" property="og:url" />
@@ -18,16 +18,23 @@
     <meta content="#212331" data-react-helmet="true" name="theme-color" />
 </head>
 <body>
-    <div class="container">
-        <div class="container"><h1>SPLIT</h1></div>
-        <textarea class="item" id="playernames" cols="40" rows="14" placeholder="Write each players name in a new line."></textarea>
-        <div class="controls">
+    <div class="maincontainer">
+        <div class="titlecontainer">
+            <h1>SPLIT</h1>
+        </div>
+        <div class="textareacontainer">
+            <textarea id="playernames" cols="40" rows="14" placeholder="Write each players name in a new line."></textarea>
+        </div>
+        <div class="controlscontainer">
             <label id="rangeLabel" for="numberofteams">Nunber of teams: 2</label>
             <input type="range" id="numberofteams" min="2" value="2" max="10" onchange="UpdateLabel()">
             <input type="button" value="SPLIT INTO TEAMS" onclick="Split()">
         </div>
         <div class="teamscontainer" id="teams"></div>
     </div>
+    <footer>
+        <a href="http://">Go to GitHub repository</a>
+    </footer>
     <script src="split.js"></script>
 </body>
 </html>
