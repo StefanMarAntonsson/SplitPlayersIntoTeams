@@ -26,13 +26,15 @@
             <textarea id="playernames" cols="40" rows="14" placeholder="Write each players name in a new line."></textarea>
         </div>
         <div class="controlscontainer">
-            <label id="rangeLabel" for="numberofteams">Nunber of teams: 2</label>
-            <input type="range" id="numberofteams" min="2" value="2" max="10" onchange="UpdateLabel()">
-            <input type="button" value="SPLIT INTO TEAMS" onclick="Split()">
+            <input class="pointer" type="range" id="numberofteams" min="2" value="2" max="10" list="markers" onchange="UpdateLabel()">
+            <div class="sliderticks">
+                <p>2</p><p>3</p><p>4</p><p>5</p><p>6</p><p>7</p><p>8</p><p>9</p><p>10</p>
+              </div>
+            <input class="btn" type="button" value="SPLIT PLAYERS INTO TEAMS" onclick="Split()">
         </div>
         <div class="teamscontainer" id="teams"></div>
     </div>
-    <footer>
+    <footer class="footer">
         <a href="https://github.com/StefanMarAntonsson/SplitPlayersIntoTeams">Go to GitHub repository</a>
     </footer>
     <script src="split.js"></script>

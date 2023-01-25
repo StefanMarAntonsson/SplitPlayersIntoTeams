@@ -1,68 +1,35 @@
-:root {
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
     --primary-color: hsl(0, 0%, 90%);
     --secondary-color: hsl(233, 19%, 28%);
     --background-color: hsl(232, 19%, 16%);
     --hover-color: hsl(233, 18%, 40%);
     --active-color: hsl(233, 24%, 36%);
-    --font: Verdana, Geneva, Tahoma, sans-serif;
-}
-.maincontainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.maincontainer > *, a {
-    font-family: var(--font);
-}
-.controlscontainer {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-}
-.teamscontainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-}
-body {
+
     color: var(--primary-color);
     background-color: var(--background-color);
 }
 textarea {
     padding: 10px;
-    border: 8px solid var(--secondary-color);
-    border-top: 4px solid var(--secondary-color);
-    border-radius: 12px;
-}
-textarea, input {
-    border: none;
+    margin-bottom: 8px;
+    border: 10px solid var(--secondary-color);
+    border-top: 6px solid var(--secondary-color);
+    border-radius: 10px;
     color: var(--primary-color);
     background-color: var(--secondary-color);
 }
 input[type="button"] {
-    font-size: larger;
-    padding: 10px 46px;
+    border: none;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 input:hover {
     background-color: var(--hover-color);
 }
 input:active {
     background-color: var(--active-color);
-}
-li {
-    list-style: outside;
-    margin: 6px;
-}
-ul>label {
-    font-weight: 800;
-}
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    text-align: center;
 }
 a {
     text-decoration: none;
@@ -73,4 +40,62 @@ a:hover {
 }
 a:active {
     color: var(--active-color);
+}
+li {
+    list-style: outside;
+    margin: 6px;
+    text-align: left;
+}
+ul>label {
+    font-weight: 800;
+}
+.btn {
+    margin: 8px;
+    font-size: 1.2rem;
+    padding: 10px 46px;
+    border-radius: 12px;
+}
+.pointer {
+    cursor: pointer;
+}
+.maincontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.controlscontainer {
+    display: flex;
+    flex-direction: column;
+}
+.teamscontainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+#rangeLabel {
+    text-align: center;
+}
+.sliderticks {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+  
+.sliderticks p {
+    background: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    width: 2px;
+    height: 8px;
+    line-height: 36px;
+    margin: 0 0 20px 0;
 }

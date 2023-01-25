@@ -5,7 +5,8 @@ function Split()
     if(listOfPlayerNames.length == 1) {
         return;
     }
-    const numberOfTeams = document.getElementById('numberofteams').value;
+    listOfPlayerNames = FilterOutWhiteLineAndEmpty(listOfPlayerNames);
+    const numberOfTeams = document.getElementById("numberofteams").value;
     listOfPlayerNames = Shuffle(listOfPlayerNames);
     const playerCount = listOfPlayerNames.length;
     const playersPerTeam = Math.floor(playerCount / numberOfTeams);
@@ -39,7 +40,17 @@ function Split()
         }
     }
 }
-// shuffle -.- . -.-
+function FilterOutWhiteLineAndEmpty(array)
+{
+    var returnArray = [];
+    for (let p = 0; p < array.length; p++) {
+        const playerName = array[p];
+        if(playerName != " " && playerName) {
+            returnArray.push(playerName);
+        }
+    }
+    return returnArray;
+}
 function Shuffle(a) {
     var randNum, x, i;
     for (i = a.length - 1; i > 0; i--) {
@@ -49,9 +60,4 @@ function Shuffle(a) {
         a[randNum] = x;
     }
     return a;
-}
-
-function UpdateLabel() {
-    const numberOfTeams = document.getElementById("numberofteams").value;
-    document.getElementById("rangeLabel").innerHTML = `Number of teams: ${numberOfTeams}`;
 }
